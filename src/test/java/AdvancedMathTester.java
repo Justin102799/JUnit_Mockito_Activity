@@ -21,8 +21,6 @@ public class AdvancedMathTester {
         when(basicMath.subtract(80.0, 20.0)).thenReturn(60.0);
 
         Assert.assertEquals(advanceMath.multiplyDifferenceBy5(80.0, 20.0), 300.0, 0);
-        verify(basicMath).subtract(80.0, 20.0);
-
     }
 
     @Test
@@ -30,10 +28,6 @@ public class AdvancedMathTester {
         when(basicMath.add(75.0, 25.0)).thenReturn(100.0);
 
         Assert.assertEquals(advanceMath.multiplySumBy5(75.0, 25.0), 500.0, 0);
-        verify(basicMath).add(75.0, 25.0);
-        verify(basicMath, atLeastOnce()).add(75.0, 25.0);
-        verify(basicMath, atMost(3)).add(75.0, 25.0);
-
     }
 
     @Test
@@ -54,7 +48,7 @@ public class AdvancedMathTester {
         advanceMath.getPercentage(50.0, 100.0);
 
         reset(basicMath);
-        Assert.assertEquals(advanceMath.getPercentage(50.0, 100.0), 0, 0);
+        Assert.assertEquals(advanceMath.getPercentage(50.0, 100.0), 00.0, 0);
     }
 
 

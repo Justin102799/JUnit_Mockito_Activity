@@ -23,9 +23,9 @@ public class AdvancedMathTesterBDD {
         //Given
         given(basicMath.subtract(80.0, 20.0)).willReturn(60.0);
         //When
-        advanceMath.multiplyDifferenceBy5(80.0,20.0);
+        double result = advanceMath.multiplyDifferenceBy5(80.0,20.0);
         //Then
-        verify(basicMath).subtract(80.0, 20.0);
+        Assert.assertEquals(result, 300.0, 0);
     }
 
     @Test
@@ -33,9 +33,9 @@ public class AdvancedMathTesterBDD {
         //Given
         given(basicMath.add(75.0,25.0)).willReturn(100.0);
         //When
-        advanceMath.multiplySumBy5(75.0,25.0);
+        double result = advanceMath.multiplySumBy5(75.0,25.0);
         //Then
-        verify(basicMath).add(75.0, 25.0);
+        Assert.assertEquals(result, 500.0, 0);
 
 
     }
@@ -57,9 +57,9 @@ public class AdvancedMathTesterBDD {
         //Given
         given(basicMath.add(50.0,100.0)).willReturn(0.5);
         //When
-        advanceMath.getPercentage(50.0, 100.0);
+        double result = advanceMath.getPercentage(50.0, 100.0);
         //Then
         reset(basicMath);
-        Assert.assertEquals(advanceMath.getPercentage(50.0, 100.0), 0, 0);
+        Assert.assertEquals(result, 0.00, 0);
     }
 }
